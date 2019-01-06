@@ -1,0 +1,19 @@
+version: "2"
+
+volumes:
+  postgres:
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/home/app
+    ports:
+      - 3000:80
+    depends_on:
+      - db
+
+  db:
+    image: postgres:9.6.11-alpine
+    volumes:
+      - postgres:/var/lib/postgresql/data
