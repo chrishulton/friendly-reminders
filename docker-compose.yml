@@ -6,6 +6,9 @@ volumes:
 services:
   web:
     build: .
+    environment:
+      PASSENGER_APP_ENV: "development"
+      RAILS_ENV: "development"
     volumes:
       - .:/home/app
     ports:
