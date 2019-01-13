@@ -1,0 +1,6 @@
+build:
+  docker:
+    web: Dockerfile
+  environment:
+    PASSENGER_APP_ENV: "production"
+    RAILS_ENV: "production"
